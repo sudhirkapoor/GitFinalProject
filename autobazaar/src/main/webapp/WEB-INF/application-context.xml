@@ -36,6 +36,7 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 		<!-- Setting Hibenate properties -->
 		<property name="hibernateProperties">
 			<props>
+				<prop key="lazy">false</prop>
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
 				<prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
 				<prop key="hibernate.format_sql">true</prop>

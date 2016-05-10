@@ -32,12 +32,16 @@ public class ProductService {
 
 	/* Calling DAO update method for updating existing product details */
 	public void updateProduct(Product p) {
+		System.out.println("service update start");
 		dao.updateProduct(p);
+		System.out.println("service update end");
 	}
 
 	/* Calling DAO getProduct method for retreving one product */
 	public Product getProduct(int pid) {
+		System.out.println("service id start");
 		Product p = dao.getProduct(pid);
+		System.out.println("service id end");
 		return p;
 	}
 

@@ -80,9 +80,12 @@ public class AdminController {
 	 */
 	@RequestMapping("/Admin/updateProduct/{id}")
 	public String updateProduct(@PathVariable("id") int id, Model model) {
+		System.out.println("Controller start");
 		model.addAttribute("product", service.getProduct(id));
 		Product p = service.getProduct(id);
+		System.out.println(p.getPname());
 		model.addAttribute("listProduct", service.getAllProduct());
+		System.out.println("Controller end");
 		return "Admin";
 	}
 }

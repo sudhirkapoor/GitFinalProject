@@ -46,8 +46,11 @@ public class ProductDAO implements ProductDAOInterface {
 	}
 	/*Retriving specific product from the table by suplied product id*/
 	public Product getProduct(int pid) {
+		System.out.println("DAO id start");
 		Session session=sessionFactory.getCurrentSession();
-		Product p=(Product)session.load(Product.class, new Integer(pid));
+		//Product p=(Product)session.load(Product.class, new Integer(pid));
+		Product p=(Product)session.get(Product.class, new Integer(pid));
+		System.out.println("DAO id end");
 		return p;
 	}
 	/*insert record into the table*/
