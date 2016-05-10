@@ -3,7 +3,7 @@ import java.util.List;
 
 import com.autobazaar.model.*;
 
-/*Creating DAO Interface*/
+/*Creating DAO Interface for product*/
 public interface ProductDAOInterface {
 public List<Product> getAllProduct();
 public void updateProduct(Product p);

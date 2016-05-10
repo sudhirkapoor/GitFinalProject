@@ -6,26 +6,98 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<div>
+
+<div class="container central">
+				 <h2 class="add-user-heading">Sign Up</h2>
+				 <c:url var="addAction" value="/insertDetail" />
+				<form:form action="${addAction}" commandName="user">
+			
+		<div class="row">
+			<div class=col-xs-6><form:label path="fname"><spring:message text="First NAME"/></form:label></div>
+						<div class=col-xs-6><form:input class="form-control" path="fname"/></div>
+						<div class=col-xs-6><form:label path="lname"><spring:message text="Last NAME"/></form:label></div>
+						<div class=col-xs-6><form:input path="lname"/></div>
+		</div>
+		<div class="row">
+			<div class=col-xs-6><form:label path="userid"><spring:message text="Email"/></form:label></div>
+			<div class=col-xs-6><form:input path="userid"/></div>
+		</div>
+			<div class="row">
+			<div class=col-xs-6><form:label path="password"><spring:message text="Password"/></form:label></div>
+			<div class=col-xs-6><form:input path="password"/></div>
+		</div>
+			<div class="row">
+			<div class=col-xs-6><form:label type="password" path="password"><spring:message text="Re-Password"/></form:label></div>
+			<div class=col-xs-6><form:input type="password" path="password"/></div>
+		</div>
+			<div class="row">
+			<div class=col-xs-6><form:label path="address"><spring:message text="Address"/></form:label></div>
+			<div class=col-xs-6><form:input path="address"/></div>
+		</div>
+		<div class="row">
+			<div class=col-xs-6><form:label path="state"><spring:message text="State"/></form:label></div>
+			<div class=col-xs-6><form:input path="state"/></div>
+		</div>
+		<div class="row">
+			<div class=col-xs-6><form:label path="city"><spring:message text="city"/></form:label></div>
+			<div class=col-xs-6><form:input path="city"/></div>
+		</div>
+		<div class="row">
+			<div class=col-xs-6><form:label path="zipcode"><spring:message text="Zipcode"/></form:label></div>
+			<div class=col-xs-6><form:input path="zipcode"/></div>
+		</div>
+		<div class="row">
+			<div class=col-xs-6><input type="submit" value="<spring:message text="Register"/>"></div>
+			
+		</div>
+	
+</form:form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <%-- 
 <div class="wrapper">
-    <form:form class="form-signin" action="" command="">       
+    <form:form class="form-signin" action="/user/insertDetail" command="user">       
       <h2 class="form-signin-heading">Please login</h2>
-      <form:input type="text" path="" class="form-control" placeholder="Email Address" />
-      <form:input type="password" path="" class="form-control" name="password" placeholder="Password"/>      
+      <form:input type="text" path="pname" class="form-control" placeholder="Name" />
+      <form:input type="password" path="name" class="form-control" name="password" placeholder="Password"/>      
       <label class="checkbox">
-        <form:input type="checkbox" path="" value="remember-me" id="rememberMe" name="rememberMe"/> Remember me
+        <form:input type="checkbox" path="name" value="remember-me" id="rememberMe" name="rememberMe"/> Remember me
       </label>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
     </form:form>
-  </div> --%>
+  </div>
+
+ --%>
 
 
-
-
-
+<!-- 
 <div class="row">
 			<div class="col-md-5"></div>
 			<div class="col-md-3">
@@ -88,7 +160,7 @@
 
 		</div>
 
-</div>
+</div> -->
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>

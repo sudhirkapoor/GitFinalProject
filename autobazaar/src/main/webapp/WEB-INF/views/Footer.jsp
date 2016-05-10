@@ -32,7 +32,7 @@
 					</ul>
 					
 					<ul class="nav navbar-nav navbar-right">
-						<li>Copyright © 2015 AutoBazaar Pvt. Ltd.</li>
+						 <li style="text-align:right; margin-left:150px;">Copyright &copy; 2015 AutoBazaar Pvt. Ltd.</li>
 						
 					</ul>
 				</div>

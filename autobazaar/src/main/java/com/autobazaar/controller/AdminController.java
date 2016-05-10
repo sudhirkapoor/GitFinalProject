@@ -2,13 +2,18 @@ package com.autobazaar.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.autobazaar.model.Product;
@@ -40,8 +45,16 @@ public class AdminController {
 	}
 
 	/* This method will call when admin insert new records int the table */
-	@RequestMapping(value = "/Admin/addProduct")
-	public String insertProduct(@ModelAttribute("product") Product product) {
+	@RequestMapping(value = "/Admin/addProduct", method=RequestMethod.POST)
+	public String insertProduct( @Valid @ModelAttribute("product") Product product, BindingResult result,Model m) {
+		
+	if (result.hasErrors()) {
+		System.out.println("Error");
+		
+		m.addAttribute("listProduct", this.service.getAllProduct());
+		
+		return "Admin";
+	}
 		if (product.getPid() == 0) {
 			this.service.insertProduct(product);
 		} else {

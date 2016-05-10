@@ -33,9 +33,7 @@ public class ProductDAO implements ProductDAOInterface {
 	}
 	/*Update specific product into the table*/
 	public void updateProduct(Product p) {
-		System.out.println("Update dao before session start");
 		Session session=sessionFactory.getCurrentSession();
-		System.out.println("Update dao after session start");
 		session.update(p);
 		
 	}
@@ -48,10 +46,8 @@ public class ProductDAO implements ProductDAOInterface {
 	}
 	/*Retriving specific product from the table by suplied product id*/
 	public Product getProduct(int pid) {
-		System.out.println("getProduct called");
 		Session session=sessionFactory.getCurrentSession();
 		Product p=(Product)session.load(Product.class, new Integer(pid));
-		System.out.println(p.getPname());
 		return p;
 	}
 	/*insert record into the table*/

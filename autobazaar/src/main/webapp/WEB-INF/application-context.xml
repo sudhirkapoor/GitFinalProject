@@ -29,6 +29,7 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 		<property name="annotatedClasses">
 			<list>
 				<value>com.autobazaar.model.Product</value>
+				<value>com.autobazaar.model.UserDetails</value>
 			</list>
 		</property>
 
@@ -49,11 +50,23 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 
+<!-- Creating bean for UserDAO and sending session object to UserDAO -->
+	<bean id="udao" class="com.autobazaar.dao.UserDAO">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
 	<!-- Creating bean for ProductService and sending DAO object to ProductService -->
 	<bean id="service" class="com.autobazaar.service.ProductService">
 		<property name="dao" ref="dao"></property>
 
 	</bean>
+	
+	<!-- Creating bean for UserService and sending DAO object to UserService -->
+	<bean id="uservice" class="com.autobazaar.service.UserService">
+		<property name="udao" ref="udao"></property>
+
+	</bean>
+	
 	<context:component-scan base-package="com.autobazaar" />
 
 	<context:annotation-config />

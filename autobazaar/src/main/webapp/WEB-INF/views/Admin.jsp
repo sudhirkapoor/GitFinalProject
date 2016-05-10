@@ -10,7 +10,7 @@
 
 
 
-		<form:form action="${addAction}" commandName="product">
+		<form:form action="${addAction}" commandName="product" method="post">
 			<table>
 				<c:if test="${!empty product.pname}">
 					<tr>
@@ -25,33 +25,38 @@
 					<td><form:label path="pname">
 							<spring:message text="Product Name" />
 						</form:label></td>
-					<td><form:input path="pname" /></td>
+					<td><form:input path="pname" /><form:errors
+                            path="pname" /></td>
 				</tr>
 				<tr>
 					<td><form:label path="pbrand">
 							<spring:message text="Product Brand" />
 						</form:label></td>
-					<td><form:input path="pbrand" /></td>
+					<td><form:input path="pbrand" /><form:errors
+                            path="pbrand" /></td>
 				</tr>
 				<tr>
 					<td><form:label path="pdescription">
 							<spring:message text="Product Description" />
 						</form:label></td>
-					<td><form:input path="pdescription" /></td>
+					<td><form:input path="pdescription" /><form:errors
+                            path="pdescription" /></td>
 				</tr>
 
 				<tr>
 					<td><form:label path="pprice">
 							<spring:message text="Product Price" />
 						</form:label></td>
-					<td><form:input path="pprice" /></td>
+					<td><form:input path="pprice" /><form:errors
+                            path="pprice" /></td>
 				</tr>
 
 				<tr>
 					<td><form:label path="pcategory">
 							<spring:message text="Product Category" />
 						</form:label></td>
-					<td><form:input path="pcategory" /></td>
+					<td><form:input path="pcategory" /><form:errors
+                            path="pcategory" /></td>
 				</tr>
 
 				<tr>

@@ -41,7 +41,7 @@
 		</div> --%>
 		<div class="row">
 
-		<nav class="navbar navbar-inverse navbar-fixed-top">
+		<nav id="myNavbar" class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -56,7 +56,7 @@
 					<ul class="nav navbar-nav">
 
 						<li><a href="index">Home</a></li>
-						<li><a href="Aboutus">About US</a></li>
+						<li><a id="abt" href="#section1">About US</a></li>
 						<li class="dropdown"><a data-toggle="dropdown" href="Product">Product
 								<span class="caret"></span>
 						</a>

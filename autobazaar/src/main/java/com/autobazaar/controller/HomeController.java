@@ -6,10 +6,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.*;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.autobazaar.model.Product;
+import com.autobazaar.model.UserDetails;
 import com.autobazaar.service.ProductService;
 import com.google.gson.Gson;
 
@@ -79,9 +81,18 @@ public class HomeController {
 	}
 	
 	/* Mapping request for Register page */
-	@RequestMapping("/Register")
-	public ModelAndView registerPage() {
-		ModelAndView mv = new ModelAndView("Register");
-		return mv;
+	@RequestMapping(value = "/Register")
+	public String registerPage(Model model) {
+		UserDetails user=new UserDetails();
+		model.addAttribute("user",user);
+		
+		return "Register";
 	}
+	
+	
+	
+	
+	
+	
+	
 }
