@@ -38,6 +38,11 @@ public class HomeController {
 		ModelAndView mv = new ModelAndView("index");
 		return mv;
 	}
+	@RequestMapping("/product/index")
+	public ModelAndView indexPage2() {
+		ModelAndView mv = new ModelAndView("index");
+		return mv;
+	}
 
 	/* Mapping request for Product page */
 	@RequestMapping("/product")
@@ -84,14 +89,26 @@ public class HomeController {
 	@RequestMapping(value = "/Register")
 	public String registerPage(Model model) {
 		UserDetails user=new UserDetails();
-		model.addAttribute("user",user);
-		
+		model.addAttribute("user",user);		
 		return "Register";
 	}
 	
 	
 	
+
+	/* Mapping request for ProductDetail page */
+/*	@RequestMapping("/product/ProductDetails")
 	
+	public String ProductDetailPage(@ModelAttribute("p") Product p,Model m ) {
+		m.addAttribute("product",p);
+		return "ProductDetail";
+	}*/
+@RequestMapping("/product/ProductDetails")
+	
+	public ModelAndView ProductDetailPage() {
+		
+		return new ModelAndView("ProductDetail");
+	}
 	
 	
 	

@@ -56,12 +56,12 @@
 							<td>{{p.pprice}}</td>
 							<td>{{p.pcategory}}</td>
 							<td>
-								<form action="ProductDetails" method="get">
-									<input type="hidden" value="{{p.pid}}" name="id"></input> <input
-										type="hidden" value="{{p.pname}}" name="name"></input> <input
-										type="hidden" value="{{p.pbrand}}" name="brand"></input> <input
-										type="hidden" value="{{p.pdescription}}" name="description"></input>
-									<input type="hidden" value="{{p.pprice}}" name="price"></input>
+								<form action="ProductDetails" >
+									<input type="hidden" value="{{p.pid}}" name="pid"></input> <input
+										type="hidden" value="{{p.pname}}" name="pname"></input> <input
+										type="hidden" value="{{p.pbrand}}" name="pbrand"></input> <input
+										type="hidden" value="{{p.pdescription}}" name="pdescription"></input>
+									<input type="hidden" value="{{p.pprice}}" name="pprice"></input>
 									<button type="submit">
 										<span class="glyphicon glyphicon-plus-sign"></span>
 									</button>
@@ -80,6 +80,14 @@
 	</div>
 
 </div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
 <div>
 	<%@ include file="Footer.jsp"%>
 </div>

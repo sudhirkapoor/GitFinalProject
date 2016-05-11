@@ -7,6 +7,7 @@ import javax.validation.constraints.*;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.transaction.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table(name = "Product")
@@ -36,7 +37,17 @@ public class Product implements Serializable {
 	@NotEmpty(message="*")
 	@Column(name = "pcategory")
 	private String pcategory;
-
+/*@Transient
+	private MultipartFile image;
+	
+	public MultipartFile getImage() {
+		return image;
+	}
+	
+	public void setImage(MultipartFile image) {
+		this.image = image;
+	}
+*/
 	public int getPid() {
 		return pid;
 	}
