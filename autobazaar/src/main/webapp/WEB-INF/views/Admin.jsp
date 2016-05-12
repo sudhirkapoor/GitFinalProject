@@ -69,8 +69,8 @@ input[type="password"] {
 
 
 
-		<form:form class="form-signin" action="${addAction}"
-			commandName="product" method="post">
+		<form:form class="form-signin" action="${addAction}" modelAttribute="product" 
+			commandName="product" method="post" enctype="multipart/form-data" >
 			<h2 class="form-signin-heading">Product Details</h2>
 			<table>
 				<c:if test="${!empty product.pname}">
@@ -120,11 +120,16 @@ input[type="password"] {
 					<td><form:input path="pcategory" class="form-control col-xs-2"
 							style="width:150px;" /> <form:errors path="pcategory" /></td>
 				</tr>
-				<%-- <tr>
+				
+				
+				<tr>
 					<td><form:label path="image">
-							<spring:message text="Photo to upload" />
+							<spring:message text="Choose Image" />
 						</form:label></td>
-					<td><form:input type="file" path="image" /></td></tr> --%>
+					<td><form:input path="image" type="file" class="form-control col-xs-2"
+							style="width:150px;" /> 
+				</tr>
+			
 				<tr>
 					<td colspan="2" style="align: center"><c:if
 							test="${!empty product.pname}">

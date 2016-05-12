@@ -17,37 +17,38 @@ public class Product implements Serializable {
 	@Column(name = "pid")
 	private int pid;
 
-	@Column(name = "pname",nullable=false)
-	//@NotNull
-	/*@NotEmpty(message="Name cannot be empty")*/
-	@NotEmpty(message="*")
+	@Column(name = "pname", nullable = false)
+	// @NotNull
+	/* @NotEmpty(message="Name cannot be empty") */
+	@NotEmpty(message = "*")
 	private String pname;
-	/*@NotEmpty(message="Description cannot be empty")*/
-	@NotEmpty(message="*")
+	/* @NotEmpty(message="Description cannot be empty") */
+	@NotEmpty(message = "*")
 	@Column(name = "pdescription")
 	private String pdescription;
-	
+
 	@Column(name = "pprice")
 	private int pprice;
-	/*@NotEmpty(message="Brand cannot be empty")*/
-	@NotEmpty(message="*")
+	/* @NotEmpty(message="Brand cannot be empty") */
+	@NotEmpty(message = "*")
 	@Column(name = "pbrand")
 	private String pbrand;
-	/*@NotEmpty(message="Category cannot be empty")*/
-	@NotEmpty(message="*")
+	/* @NotEmpty(message="Category cannot be empty") */
+	@NotEmpty(message = "*")
 	@Column(name = "pcategory")
 	private String pcategory;
-/*@Transient
+
+	@Transient
 	private MultipartFile image;
-	
+
 	public MultipartFile getImage() {
 		return image;
 	}
-	
+
 	public void setImage(MultipartFile image) {
 		this.image = image;
 	}
-*/
+
 	public int getPid() {
 		return pid;
 	}

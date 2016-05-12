@@ -56,7 +56,7 @@
 							<td>{{p.pprice}}</td>
 							<td>{{p.pcategory}}</td>
 							<td>
-								<form action="ProductDetails" >
+								<form action="${session.getContextPath()}/autobazaar/ProductDetail"  method="post" >
 									<input type="hidden" value="{{p.pid}}" name="pid"></input> <input
 										type="hidden" value="{{p.pname}}" name="pname"></input> <input
 										type="hidden" value="{{p.pbrand}}" name="pbrand"></input> <input

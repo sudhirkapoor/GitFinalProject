@@ -1,5 +1,6 @@
 package com.autobazaar.controller;
 
+import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
@@ -53,29 +54,28 @@ public class AdminController {
 	@RequestMapping(value = "/Admin/addProduct", method = RequestMethod.POST)
 	public String insertProduct(@Valid @ModelAttribute("product") Product product, BindingResult result, Model m,
 			HttpServletRequest request) {
-
+		System.out.print(product.toString());
+		System.out.print(product.getImage());
 		if (result.hasErrors()) {
-			System.out.println("Error");
+			System.out.println(result.toString());
 
 			m.addAttribute("listProduct", this.service.getAllProduct());
 
 			return "Admin";
 		}
 		if (product.getPid() == 0) {
-			
-			System.out.print(product.toString());
-			System.out.print(product.getPid());
 			this.service.insertProduct(product);
-/*
+
 			MultipartFile file = product.getImage();
 			String originalfile = file.getOriginalFilename();
-			String filepath = request.getSession().getServletContext().getRealPath("/resources/");
+			
+			String filepath = request.getSession().getServletContext().getRealPath("/resources/images/");
 			System.out.println(filepath);
 			String filename = filepath + "\\" + product.getPid() + ".jpg";
-			System.out.println(filename);
-			byte imagebyte[] = originalfile.getBytes();
+			
 			try {
-				FileOutputStream fos = new FileOutputStream(filename);
+				byte imagebyte[] = product.getImage().getBytes();
+				BufferedOutputStream fos = new BufferedOutputStream(new FileOutputStream(filename));
 				fos.write(imagebyte);
 				fos.close();
 				System.out.println(filename);
@@ -87,7 +87,7 @@ public class AdminController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-*/
+
 		}
 
 		else

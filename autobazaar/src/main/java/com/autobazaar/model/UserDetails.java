@@ -21,7 +21,7 @@ public class UserDetails  implements Serializable  {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="uid")
-	@NotEmpty(message="*")
+	
 	private int uid;
 	@Column(name="name")
 	@NotEmpty(message="*")

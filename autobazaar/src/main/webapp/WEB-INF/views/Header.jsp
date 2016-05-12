@@ -55,23 +55,23 @@
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav">
 
-						<li><a href="index">Home</a></li>
+						<li><a href="${session.getContextPath()}/autobazaar/index">Home</a></li>
 						<li><a id="abt" href="#section1">About US</a></li>
-						<li class="dropdown"><a data-toggle="dropdown" href="Product">Product
+						<li class="dropdown"><a data-toggle="dropdown" role="button" href="#">Product
 								<span class="caret"></span>
 						</a>
 							<ul class="pmenu dropdown-menu">
-								<li><a href="Product"></a></li>
-								<li><a href="Product"></a></li>
-								<li><a href="Product"></a></li>
+								<li><a href="Product">Car Care</a></li>
+								<li><a href="Product"></a>Speaker and System</li>
+								<li><a href="Product"></a>Tyre and Rims</li>
 
 							</ul></li>
 					</ul>
 
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="Register"><span
+						<li><a href="${session.getContextPath()}/autobazaar/Register"><span
 								class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-						<li><a href="Login"><span
+						<li><a href="${session.getContextPath()}/autobazaar/Login"><span
 								class="glyphicon glyphicon-log-in"></span> Login</a></li>
 					</ul>
 				</div>
