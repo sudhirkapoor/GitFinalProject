@@ -1,31 +1,25 @@
 <div>
 	<%@ include file="Header.jsp"%>
 </div>
-User address
 
-<sf:form modelAttribute="product"><br />
-					<sf:label path="userId">UserName:</sf:label>
-					<sf:input path="userId" /><br />
-					<!-- to display validation messages -->
-					<c:forEach items="${flowRequestContext.messageContext.getMessagesBySource('userId')}" var="err">
-					  <div><span>${err.text}</span></div>
-					</c:forEach><br />
-					<sf:label path="email">Email Id: </sf:label>
-					<sf:input path="email" /><br />
-					<c:forEach items="${flowRequestContext.messageContext.getMessagesBySource('email')}" var="err">
-					  <div><span>${err.text}</span></div>
-					</c:forEach><br />
-					<sf:label path="age">Age: </sf:label>
-					<sf:input path="age" /><br />
-					<c:forEach items="${flowRequestContext.messageContext.getMessagesBySource('age')}" var="err">
-					  <div><span>${err.text}</span></div>
-					</c:forEach><br />
+
+<%@taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+
+<h1>Address</h1>
+
+<sf:form modelAttribute="product">
+					<sf:label path="pname">Product Name:</sf:label>${product.pname}
+					<br /><br />
+					<sf:label path="pbrand">Brand:</sf:label>${product.pbrand}
+					<br /><br />
+					<sf:label path="pprice">Age :</sf:label>${pprice}
+					<br /><br />
 					<!-- for triggering webflow events using form submission,
 					 the eventId to be triggered is given in "name" attribute as:
 					-->
-					<input name="_eventId_submit" type="submit" value="Submit" /><br />
+					<input name="_eventId_edit" type="submit" value="Prev" /><br />
+					<input name="_eventId_submit" type="submit" value="Next" /><br />
 				</sf:form>
-
 <div>
 	<%@ include file="Footer.jsp"%>
 </div>

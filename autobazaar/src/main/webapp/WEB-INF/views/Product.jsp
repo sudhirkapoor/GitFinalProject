@@ -7,9 +7,10 @@
 	var app = angular.module("search", []).controller("productTable",
 			function($scope) {
 				$scope.products = ${listProduct};
-			});
+			}); 	
 </script>
 <p>&nbsp;</p>
+<body>
 <div ng-app="search">
 	<div class="container" ng-controller="productTable">
 
@@ -91,3 +92,4 @@
 <div>
 	<%@ include file="Footer.jsp"%>
 </div>
+</body>
