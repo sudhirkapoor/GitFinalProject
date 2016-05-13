@@ -60,6 +60,7 @@
 						<div class="col-md-4"></div>
 						<div class="col-md-4"></div>
 						<div class="col-md-4">
+						<sf:input type="hidden" path="pid" ></sf:input>
 							<input class="btn btn-info" name="_eventId_submit" type="submit"
 								value="Next" />
 						</div>
