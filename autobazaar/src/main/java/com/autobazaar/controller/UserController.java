@@ -1,5 +1,7 @@
 package com.autobazaar.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -21,7 +23,7 @@ public class UserController {
 
 	/* Request mapping with Register spring form */
 	@RequestMapping("/insertDetail")
-	public String insertUserDetail(@ModelAttribute("user") UserDetails user, BindingResult result) {
+	public String insertUserDetail(@Valid @ModelAttribute("user") UserDetails user, BindingResult result) {
 
 		if (result.hasErrors()) {
 			return "Register";
@@ -30,6 +32,7 @@ public class UserController {
 
 		return "redirect:/index";
 	}
+	
 	/*
 	 * @RequestMapping(value = "/pageUser") public String getUser(Model model) {
 	 * UserDetails user=new UserDetails(); model.addAttribute("user",user);

@@ -113,7 +113,7 @@
 					<h3>Body Care</h3>
 					<p>Car wax, dash board dressers and more</p>
 					<p>
-						<a class="btn btn-primary" href="product/Car Care" role="button">View
+						<a class="btn btn-primary" href="product/Carcare" role="button">View
 							More &raquo;</a>
 					</p>
 				</div>
@@ -148,7 +148,11 @@
 
 		</div>
 	</div>
-	<div id="section1" style="width: 100%; height: 350px; background:#E8E1E1">
+	
+
+
+</div>
+<div id="section1" style="width: 100%; height: 270px; background:#E8E1E1">
 		
 
 			<!-- <div class="panel panel-default">
@@ -185,8 +189,6 @@
 </div>
 
 
-
-</div>
 <!-- <section>
 <a id="notification"></a>
 <div class="bclear"></div>

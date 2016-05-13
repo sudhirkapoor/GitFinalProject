@@ -26,7 +26,7 @@ public class Product implements Serializable {
 	@NotEmpty(message = "*")
 	@Column(name = "pdescription")
 	private String pdescription;
-
+	@Digits	(integer = 6, fraction = 0)
 	@Column(name = "pprice")
 	private int pprice;
 	/* @NotEmpty(message="Brand cannot be empty") */

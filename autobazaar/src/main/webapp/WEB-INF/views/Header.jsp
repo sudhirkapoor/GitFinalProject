@@ -10,6 +10,8 @@
 <c:set var="btstrpcss" value="/resources/bootstrap/css" />
 <c:set var="btstrpjs" value="/resources/bootstrap/js" />
 <meta charset="UTF-8">
+
+
 <title>Document</title>
 
 <link rel="stylesheet"
@@ -20,6 +22,10 @@
 	<link rel="stylesheet"
 	href="<c:url value="${btstrpcss }/Custome.css"/>">
 	<script src="<c:url value="${btstrpjs }/angular.min.js"/>"></script>
+	<script src="<c:url value="${btstrpjs }/bootstrap.js"/>"></script>
+	<script>
+	$(function(){ $('.nav-tabs a:first').tab('show'); }); 
+	</script>
 </head>
 <style>
 
@@ -39,13 +45,14 @@
 			</div>
 		
 		</div> --%>
+	
 		<div class="row">
 
-		<nav id="myNavbar" class="navbar navbar-inverse navbar-fixed-top">
+	<nav id="myNavbar" class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse"
-						data-target="#myNavbar">
+						data-target=".navbar collapse">
 						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
@@ -56,16 +63,18 @@
 					<ul class="nav navbar-nav">
 
 						<li><a href="${session.getContextPath()}/autobazaar/index">Home</a></li>
-						<li><a id="abt" href="#section1">About US</a></li>
-						<li class="dropdown"><a data-toggle="dropdown" role="button" href="#">Product
-								<span class="caret"></span>
+						<li><a id="abt" href="${session.getContextPath()}/autobazaar#section1">About US</a></li>
+						<li class="dropdown"><a  href="${session.getContextPath()}/autobazaar/product">Product
+								<!-- <span class="caret"></span> -->
+								<!-- data-toggle="dropdown"  -->
+								
 						</a>
-							<ul class="pmenu dropdown-menu">
-								<li><a href="Product">Car Care</a></li>
-								<li><a href="Product"></a>Speaker and System</li>
-								<li><a href="Product"></a>Tyre and Rims</li>
+							<%-- <ul class="pmenu dropdown-menu">
+								<li><a href="${session.getContextPath()}/autobazaar/product/TyreRim">Car Care</a></li>
+								<li><a href="${session.getContextPath()}/autobazaar/Speakersystem"></a>Speaker and System</li>
+								<li><a href="${session.getContextPath()}/autobazaar/TyreRim"></a>Tyre and Rims</li>
 
-							</ul></li>
+							</ul> --%></li>
 					</ul>
 
 					<ul class="nav navbar-nav navbar-right">
@@ -77,10 +86,12 @@
 				</div>
 			</div>
 		</nav>
+
 </div>
 
 
 	</div>
+	
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>

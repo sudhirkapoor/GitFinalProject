@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.binding.message.MessageContext;
 import org.springframework.stereotype.*;
@@ -11,6 +14,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.autobazaar.model.CartList;
+import com.autobazaar.model.Item;
 import com.autobazaar.model.Product;
 import com.autobazaar.model.UserDetails;
 import com.autobazaar.service.ProductService;
@@ -62,7 +67,6 @@ public class HomeController {
 	/* Mapping request for category wise Product page */
 	@RequestMapping("/product/{pname}")
 	public ModelAndView Product_Page2(@PathVariable("pname") String Prodname) {
-		System.out.println("hhhhhhhhhhhhhh");
 		List<Product> filteredlist = new ArrayList<Product>();
 		List<Product> list = service.getAllProduct();
 		Iterator<Product> i = list.iterator();
@@ -71,7 +75,6 @@ public class HomeController {
 			if (p.getPcategory().equals(Prodname)) {
 				filteredlist.add(p);
 			}
-
 		}
 		String json = new Gson().toJson(filteredlist);
 		ModelAndView mv = new ModelAndView("Product");
@@ -103,16 +106,19 @@ public class HomeController {
 	 */
 
 	Product product;
-
+	/* Mapping request for ProductDetail page */
 	@RequestMapping("/ProductDetail")
 
-	public ModelAndView ProductDetailPage(@ModelAttribute("product") Product product) {
+	public ModelAndView ProductDetailPage(@ModelAttribute("product") Product product,HttpServletRequest request ) {
 		this.product = product;
+		
 		return new ModelAndView("ProductDetail");
 	}
 
-	@RequestMapping("/Order")
 
+	
+	
+	@RequestMapping("/Order")
 	public String Order() {
 		return "redirect:/memberShip";
 	}
@@ -124,19 +130,6 @@ public class HomeController {
 
 	}
 
-	/*
-	 * public String SendOrder(Product product,MessageContext messageContext){
-	 * String status = "success"; if(userBean.getUserId().isEmpty()){
-	 * messageContext.addMessage(new MessageBuilder().error().source(
-	 * "userId").defaultText("UserId cannot be Empty").build()); status =
-	 * "failure"; } if(userBean.getEmail().isEmpty()){
-	 * messageContext.addMessage(new MessageBuilder().error().source(
-	 * "email").defaultText("Email cannot be Empty").build()); status =
-	 * "failure"; } if(userBean.getAge()==null){ messageContext.addMessage(new
-	 * MessageBuilder().error().source( "age").defaultText("Age cannot be Empty"
-	 * ).build()); status = "failure"; } return status;
-	 * 
-	 * }
-	 */
+	
 
 }

@@ -79,8 +79,8 @@ body {
     <form class="form-signin" action="login" method='POST'>  
    <%--  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> --%>     
       <h2 class="form-signin-heading">Please login</h2>
-      <input type="text" class="form-control" name="userid" placeholder="User Name" required="" autofocus="" />
-      <input type="password" class="form-control" name="password" placeholder="Password" required=""/>      
+      <input type="text" class="form-control" name="userid" placeholder="User Name" required="Please enter username" autofocus="" />
+      <input type="password" class="form-control" name="password" placeholder="Password" required="Please enter password"/>      
       <label class="checkbox">
         <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
       </label>

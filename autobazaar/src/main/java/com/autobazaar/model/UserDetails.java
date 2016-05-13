@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.Digits;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -24,31 +25,33 @@ public class UserDetails  implements Serializable  {
 	
 	private int uid;
 	@Column(name="name")
-	@NotEmpty(message="*")
+	@NotEmpty(message="Please enter name")
 	private String name;
 	@Column(name="email")
-	@NotEmpty(message="*")
+	@NotEmpty(message="Please enter email")
 	private String email;
 	@Column(name="password")
-	@NotEmpty(message="*")
+	@NotEmpty(message="Please enter password")
 	private String password;
-	@Transient
+	/*@Transient
 	@NotEmpty(message="*")
-	private String repassword;
+	private String repassword;*/
 	@Column(name="address")
-	@NotEmpty(message="*")
+	@NotEmpty(message="Please enter address")
 	private String address;
-	@Column(name="state")
+	/*@Column(name="state")
 	@NotEmpty(message="*")
 	private String state;
 	@Column(name="city")
 	@NotEmpty(message="*")
-	private String city;
-	@Column(name="mobile")
-	
-	private long mobile;
+	private String city;*/
+	@Digits(integer=10,fraction=0)
+	@Column(name="phone")	
+	private long phone;
 	@Column(name="zipcode")
+	@Digits(integer=6,fraction=0)
 	private int zipcode;
+	
 	public int getUid() {
 		return uid;
 	}
@@ -73,19 +76,19 @@ public class UserDetails  implements Serializable  {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getRepassword() {
+	/*public String getRepassword() {
 		return repassword;
 	}
 	public void setRepassword(String repassword) {
 		this.repassword = repassword;
-	}
+	}*/
 	public String getAddress() {
 		return address;
 	}
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getState() {
+	/*public String getState() {
 		return state;
 	}
 	public void setState(String state) {
@@ -96,12 +99,13 @@ public class UserDetails  implements Serializable  {
 	}
 	public void setCity(String city) {
 		this.city = city;
+	}*/
+	   
+	public long getPhone() {
+		return phone;
 	}
-	public long getMobile() {
-		return mobile;
-	}
-	public void setMobile(long mobile) {
-		this.mobile = mobile;
+	public void setPhone(long mobile) {
+		this.phone = phone;
 	}
 	public int getZipcode() {
 		return zipcode;

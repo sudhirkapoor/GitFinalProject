@@ -126,12 +126,9 @@ Product details
 
 					<div class="row add-to-cart">
 						<div class="col-md-5 product-qty">
-							<span class="btn btn-default btn-lg btn-qty"> <span
-								class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-							</span> <input class="btn btn-default btn-lg btn-qty" value="1" /> <span
-								class="btn btn-default btn-lg btn-qty"> <span
-								class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-							</span>
+							Quantity
+							 <input class="btn btn-default btn-lg btn-qty" value="1" /> 
+								
 						</div>
 						<div class="col-md-4">
 							<a href="${session.getContextPath()}/autobazaar/Order" role="button"

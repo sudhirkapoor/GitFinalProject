@@ -18,21 +18,18 @@
 </style>
 <body>
 	
-		<div style="width"100% class="row">
-			<nav class="navbar navbar-inverse">
+		<div  class="row">
+			<nav class="navbar navbar-inverse" style="height:200px">
 				<div class="container-fluid">
 					<div class="navbar-header">
 						<a class="navbar-brand" href="#">AutoBazaar.com</a>
+					<br/>
+					<a  href="index"><img style="height: 130px;width:150px;"  src="<c:url value="${imgs}/Logo/logo.png"/>"
+					class="top img-rounded"></img></a>
 					</div>
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="#">Account</a></li>
-						<li><a href="#">Contact Us</a></li>
-						<li><a href="#">About Us</a></li>
-						
-					</ul>
 					
 					<ul class="nav navbar-nav navbar-right">
-						 <li style="text-align:right; margin-left:150px;">Copyright &copy; 2015 AutoBazaar Pvt. Ltd.</li>
+						 <li style=" color:white;text-align:right; margin-left:150px;">Copyright &copy; 2015 AutoBazaar Pvt. Ltd.</li>
 						
 					</ul>
 				</div>
@@ -40,9 +37,9 @@
 		</div>
 
 	
-	<script
+	<!-- <script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<script
-		src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
 </body>
 </html>

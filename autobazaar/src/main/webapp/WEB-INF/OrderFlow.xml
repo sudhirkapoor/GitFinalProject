@@ -5,6 +5,8 @@
                           http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 
 	<!-- Executed when webFlow is triggered -->
+	
+<!-- 	<var name="cartlist" class="com.autobazaar.model.CartList"></var> -->
 	<on-start>
 		<!-- homeController is java class available through annotated HomeController.java 
 			class.here we are calling it’s initFlow() method. -->

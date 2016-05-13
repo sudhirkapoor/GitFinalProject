@@ -12,49 +12,17 @@ body {
 	max-width: 580px;
 	padding: 15px 35px 45px;
 	margin: 0 auto;
-	background-color: #fff;
+	background: #f4f7f8;
 	border: 1px solid rgba(0, 0, 0, 0.1);
-	.
-	form-signin-heading
-	,
-	.checkbox
-	{
-	margin-bottom
-	:
-	30px;
 }
 
-.checkbox {
-	font-weight: normal;
-}
-
-/* 	.form-control {
-	 position: relative;
-	 font-size: 16px;
-	 height: auto;
-	 padding: 10px;
-		@include box-sizing(border-box);
-
-		&:focus {
-		 z-index: 2;
-		}
-	}
- */
-input[type="text"] {
-	margin-bottom: -1px;
-	border-bottom-left-radius: 0;
-	border-bottom-right-radius: 0;
-}
-
-input[type="password"] {
-	margin-bottom: 20px;
-	border-top-left-radius: 0;
-	border-top-right-radius: 0;
+.form-signin-heading {
+	margin-bottom: 30px;
 }
 }
 </style>
 
-</style>
+
 
 <div>
 	<%@ include file="Header.jsp"%>
@@ -66,11 +34,9 @@ input[type="password"] {
 	<div class="container central">
 
 		<c:url var="addAction" value="/Admin/addProduct" />
-
-
-
-		<form:form class="form-signin" action="${addAction}" modelAttribute="product" 
-			commandName="product" method="post" enctype="multipart/form-data" >
+		<form:form class="form-signin" action="${addAction}"
+			modelAttribute="product" commandName="product" method="post"
+			enctype="multipart/form-data">
 			<h2 class="form-signin-heading">Product Details</h2>
 			<table>
 				<c:if test="${!empty product.pname}">
@@ -88,21 +54,25 @@ input[type="password"] {
 							<spring:message text="Product Name" />
 						</form:label></td>
 					<td><form:input path="pname" style="width:150px;"
-							class="form-control" /> <form:errors path="pname" /></td>
+							class="form-control" /> </td>
+							<td><form:errors style="color:red" path="pname" /></td>
+							
 				</tr>
 				<tr>
 					<td><form:label path="pbrand">
 							<spring:message text="Product Brand" />
 						</form:label></td>
 					<td><form:input path="pbrand" style="width:150px;"
-							class="form-control" /> <form:errors path="pbrand" /></td>
+							class="form-control" /> </td>
+							<td><form:errors style="color:red" path="pbrand" /></td>
 				</tr>
 				<tr>
 					<td><form:label path="pdescription">
 							<spring:message text="Product Description" />
 						</form:label></td>
 					<td><form:input path="pdescription" style="width:150px;"
-							class="form-control" /> <form:errors path="pdescription" /></td>
+							class="form-control" /> </td>
+							<td><form:errors style="color:red" path="pdescription" /></td>
 				</tr>
 
 				<tr>
@@ -110,26 +80,28 @@ input[type="password"] {
 							<spring:message text="Product Price" />
 						</form:label></td>
 					<td><form:input path="pprice" style="width:150px;"
-							class="form-control" /> <form:errors path="pprice" /></td>
-				</tr>
+							class="form-control" /> </td>
+							<td><form:errors style="color:red" path="pprice" /></td>
+				</tr> 
 
 				<tr>
 					<td><form:label path="pcategory">
 							<spring:message text="Product Category" />
 						</form:label></td>
 					<td><form:input path="pcategory" class="form-control col-xs-2"
-							style="width:150px;" /> <form:errors path="pcategory" /></td>
+							style="width:150px;" /> </td>
+							<td><form:errors style="color:red" path="pcategory" /></td>
 				</tr>
-				
-				
+
+
 				<tr>
 					<td><form:label path="image">
 							<spring:message text="Choose Image" />
 						</form:label></td>
-					<td><form:input path="image" type="file" class="form-control col-xs-2"
-							style="width:150px;" /> 
+					<td><form:input path="image" type="file"
+							class="form-control col-xs-2" style="width:150px;" />
 				</tr>
-			
+
 				<tr>
 					<td colspan="2" style="align: center"><c:if
 							test="${!empty product.pname}">
