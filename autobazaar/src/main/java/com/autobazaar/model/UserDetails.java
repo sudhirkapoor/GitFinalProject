@@ -3,6 +3,7 @@ package com.autobazaar.model;
 import java.io.Serializable;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,6 +24,15 @@ public class UserDetails  implements Serializable  {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="uid")
 	
+	@Embedded
+	private Address address;
+	
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
 	private int uid;
 	@Column(name="name")
 	@NotEmpty(message="Please enter name")
@@ -36,9 +46,7 @@ public class UserDetails  implements Serializable  {
 	/*@Transient
 	@NotEmpty(message="*")
 	private String repassword;*/
-	@Column(name="address")
-	@NotEmpty(message="Please enter address")
-	private String address;
+	
 	/*@Column(name="state")
 	@NotEmpty(message="*")
 	private String state;
@@ -82,12 +90,7 @@ public class UserDetails  implements Serializable  {
 	public void setRepassword(String repassword) {
 		this.repassword = repassword;
 	}*/
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
+	
 	/*public String getState() {
 		return state;
 	}

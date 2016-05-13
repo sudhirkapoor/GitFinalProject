@@ -23,9 +23,7 @@
 	href="<c:url value="${btstrpcss }/Custome.css"/>">
 	<script src="<c:url value="${btstrpjs }/angular.min.js"/>"></script>
 	<script src="<c:url value="${btstrpjs }/bootstrap.js"/>"></script>
-	<script>
-	$(function(){ $('.nav-tabs a:first').tab('show'); }); 
-	</script>
+	
 </head>
 <style>
 
