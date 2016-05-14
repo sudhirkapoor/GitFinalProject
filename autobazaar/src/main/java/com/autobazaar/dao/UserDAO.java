@@ -5,6 +5,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.autobazaar.model.Address;
 import com.autobazaar.model.Product;
 import com.autobazaar.model.UserDetails;
 
@@ -33,6 +34,14 @@ public class UserDAO implements UserDAOInterface {
 		Session session=sessionFactory.getCurrentSession();
 		UserDetails user=(UserDetails)session.load(UserDetails.class, new String(userid));
 		return user;
+	}
+	
+	
+	public String insertaddress(Address address) {
+		Session session=sessionFactory.getCurrentSession();
+		session.save(address);		
+		System.out.println("User DAO");
+		return "success";
 	}
 
 }

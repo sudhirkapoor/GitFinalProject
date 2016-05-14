@@ -23,8 +23,8 @@ public class UserDetails  implements Serializable  {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="uid")
-	
-	@Embedded
+	private int uid;
+	/*@Embedded
 	private Address address;
 	
 	public Address getAddress() {
@@ -32,8 +32,8 @@ public class UserDetails  implements Serializable  {
 	}
 	public void setAddress(Address address) {
 		this.address = address;
-	}
-	private int uid;
+	}*/
+	
 	@Column(name="name")
 	@NotEmpty(message="Please enter name")
 	private String name;

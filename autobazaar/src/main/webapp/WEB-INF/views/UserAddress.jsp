@@ -44,46 +44,46 @@
 
 
 
-			<sf:form class="form-signin" modelAttribute="product">
+			<sf:form class="form-signin" modelAttribute="uaddress">
 
 				<h2 class="form-signin-heading btn-info" style="width: 100%">Billing
 					Address</h2>
 				<table class="table">
 					<tr>
-						<td><form:label path="pname">
+						<td><form:label path="cname">
 								<spring:message text="Customer Name" />
 							</form:label></td>
-						<td><form:input path="" style="width:150px;"
+						<td><form:input path="cname" style="width:150px;"
 								class="form-control" /></td>
-								<form:input type="hidden" path="pname"></form:input>
-						<td><form:errors path="pname" /></td>
+								<form:input type="hidden" path="cname"></form:input>
+						<td><form:errors path="cname" /></td>
 					</tr>
 
 					<tr>
-						<td><form:label path="pname">
-								<spring:message text="Phone" />
-							</form:label></td>
-						<td><form:input path="" style="width:150px;"
-								class="form-control" /></td>
-						<td><form:errors path="pname" /></td>
-					</tr>
-
-					<tr>
-						<td><form:label path="pname">
+						<td><form:label path="caddress">
 								<spring:message text="Address" />
 							</form:label></td>
-						<td><form:input path="" style="width:150px;"
-								class="form-control" /></td>
-						<td><form:errors path="pname" /></td>
+						<td><form:input path="caddress" style="width:150px;"
+								class="form-control" /><form:input type="hidden" path="caddress"></form:input></td>
+						<td><form:errors path="caddress" /></td>
 					</tr>
 
 					<tr>
-						<td><form:label path="pname">
+						<td><form:label path="phone">
+								<spring:message text="phone" />
+							</form:label></td>
+						<td><form:input path="phone" style="width:150px;"
+								class="form-control" /><form:input type="hidden" path="cname"></form:input></td>
+						<td><form:errors path="phone" /></td>
+					</tr>
+
+					<tr>
+						<td><form:label path="zipcode">
 								<spring:message text="Zipcode" />
 							</form:label></td>
-						<td><form:input path="" style="width:150px;"
+						<td><form:input path="zipcode" style="width:150px;"
 								class="form-control" /></td>
-						<td><form:errors path="pname" /></td>
+						<td><form:errors path="zipcode" /></td>
 					</tr>
 
 

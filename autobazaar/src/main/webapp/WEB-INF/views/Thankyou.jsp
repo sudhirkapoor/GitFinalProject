@@ -18,10 +18,54 @@
 &nbsp;
 </p>
 <div class="container">
-<sf:form modelAttribute="product" method="post">
+<sf:form modelAttribute="uaddress" method="post">
 <h1>Thankyou for Shoping </h1>
-<h3>Your Order is ${product.pname} and Order No-009898</h3>
 
+Hello ${uaddress.cname}
+<h3>Your Order is generated and Order No-ORDAB00</h3>
+
+						<table class="table table-striped">
+						<thead>
+							<tr>
+
+								<th>Name</th>
+								<th>Brand</th>
+								<th>Description</th>
+								
+								<th>Quantity</th>
+								<th>Amount</th>
+								
+							</tr>
+						</thead>
+
+						<tbody>
+
+
+							<c:forEach items="${sessionScope.cart.listitem}" var="product">
+								<tr>
+									
+									<td>${product.p.pname}</td>
+									<td>${product.p.pbrand}</td>
+									<td>${product.p.pdescription}</td>
+									<td>${product.quantity}</td>
+									<td>${product.p.pprice* product.quantity}</td>
+									
+									
+								</tr>
+							</c:forEach>
+<!-- <tr><td></td></tr> -->
+							<%-- <tr>
+								<td>${product.pname}</td>
+								<td>${product.pbrand}</td>
+								<td>${product.pdescription}</td>
+								<td>${product.pprice}</td>
+								<td>1</td>
+								<td>${product.pprice*1}</td>
+							</tr> --%>
+
+						</tbody>
+
+					</table>
 					
 				
 					<input name="_eventId_submit" class="btn btn-info" type="submit" value="Home" /><br />

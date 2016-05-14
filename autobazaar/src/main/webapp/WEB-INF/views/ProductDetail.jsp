@@ -131,7 +131,7 @@ Product details
 								
 						</div>
 						<div class="col-md-4">
-							<a href="${session.getContextPath()}/autobazaar/Order" role="button"
+							<a href="${session.getContextPath()}/autobazaar/Order/${product.pid}" role="button"
 								name="_eventId_submit"
 								class="btn btn-lg btn-brand btn-full-width">Add to Cart
 								</a>

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.autobazaar.dao.UserDAO;
+import com.autobazaar.model.Address;
 import com.autobazaar.model.UserDetails;
 @Service
 @Transactional
@@ -36,4 +37,11 @@ public class UserService {
 	public UserDetails getUserDetail(String userid) {
 		return udao.getUserDetail(userid);
 	}
+	
+	public String insertaddress(Address add) {
+		System.out.println("User service");
+		udao.insertaddress(add);
+		return	"success";
+	}
+	
 }

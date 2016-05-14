@@ -9,14 +9,16 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 @Entity
+@Table(name="Item")
 public class Item implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int itemId;
 	@OneToOne
-	@JoinColumn(name = "id")
+	@JoinColumn(name = "pid")
 	private Product p;
 	private int quantity;
 	@ManyToOne

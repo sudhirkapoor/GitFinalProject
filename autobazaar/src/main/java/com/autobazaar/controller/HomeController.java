@@ -126,47 +126,10 @@ public class HomeController {
 			) {
 		this.product = product;
 
-		/*if (s.getAttribute("cart") == null) {
-			
-			System.out.println("1");
-			List<Item> cart = new ArrayList<Item>();
-			cart.add(new Item(product, 1));
-			System.out.println("2");
-			if (ss == null) {
-				System.out.println("3");
-				ss = s;
-				ss.setAttribute("cart", cart);
-			}
-		} else {
-			List<Item> cart = (List<Item>) ss.getAttribute("cart");
-
-			// using method isExisting here
-			int index = isExisting(product.getPid(), ss);
-			if (index == -1)
-				cart.add(new Item(this.service.getProduct(index), 1));
-			else {
-				int quantity = cart.get(index).getQuantity() + 1;
-				cart.get(index).setQuantity(quantity);
-			}
-
-			ss.setAttribute("cart", cart);
-		}
-*/
 		return new ModelAndView("ProductDetail");
 	}
 
-/*	private int isExisting(int id, HttpSession ss) {
 
-		List<Item> cart = (List<Item>) ss.getAttribute("cart");
-
-		for (int i = 0; i < cart.size(); i++)
-
-			if (cart.get(i).getP().getPid() == id)
-				return i;
-
-		return -1;
-	}
-*/
 	@RequestMapping("/Order")
 	public String Order() {
 		return "redirect:/memberShip";

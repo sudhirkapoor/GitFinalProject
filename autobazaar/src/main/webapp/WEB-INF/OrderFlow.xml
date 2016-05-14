@@ -6,11 +6,11 @@
 
 	<!-- Executed when webFlow is triggered -->
 	
-<!-- 	<var name="cartlist" class="com.autobazaar.model.CartList"></var> -->
+	<var name="cartlist" class="com.autobazaar.model.ShoppingCart"></var>
 	<on-start>
 		<!-- homeController is java class available through annotated HomeController.java 
 			class.here we are calling it’s initFlow() method. -->
-		<evaluate expression="homeController.initFlow()" result="flowScope.product" />
+		<evaluate expression="shoppingCartController.initFlow()" result="flowScope.cartlist" />
 	</on-start>
 
 	<!-- if not specified the first view state is the starting state -->
@@ -20,18 +20,39 @@
 		<transition on="success" to="confirmDetails" /> <transition on="failure" 
 		to="start" /> </action-state> -->
 
-	<view-state id="start" view="Order" model="flowScope.product">
+	<view-state id="start" view="Order" model="flowScope.cartlist">
 
-		<transition on="submit" to="address" />
+		<transition on="submit" to="calladdress" />
 	</view-state>
 
-
-	<view-state id="address" view="UserAddress" model="flowScope.product">
+ <action-state id="calladdress">
+ <evaluate expression="shoppingCartController.getaddress()" result="flowScope.uaddress"></evaluate> 
+		 <transition on="success" to="address" /> 
+		<!-- transition on="failure" to="start" /> --> </action-state>
+		
+	
+ 
+	<view-state id="address" view="UserAddress" model="flowScope.uaddress">
 		<transition on="edit" to="start" />
-		<transition on="submit" to="thankyou" />
+		<transition on="submit" to="insertaddress" />
 	</view-state>
+	
+	<action-state id="insertaddress">
+ <evaluate expression="userController.insertaddress(flowScope.uaddress,messageContext)" result="flowScope.uaddress"></evaluate> 
+		 <transition on="success" to="getadd" /> 
+		<!-- transition on="failure" to="start" /> -->
+		 </action-state>
+		 
+		 
+	<action-state id="getadd">
+ <evaluate expression="userController.getadd()" result="flowScope.uaddress"></evaluate> 
+		 <transition on="success" to="thankyou" /> 
+		<!-- transition on="failure" to="start" /> -->
+		 </action-state>
+		 	 
+		 
 
-	<view-state id="thankyou" view="Thankyou">
+	<view-state id="thankyou" view="Thankyou" model="flowScope.uaddress">
 		<transition on="submit" to="toHome" />
 	</view-state>
 

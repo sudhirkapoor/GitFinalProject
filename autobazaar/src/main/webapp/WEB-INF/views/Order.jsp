@@ -4,7 +4,7 @@
 	<%@ include file="Header.jsp"%>
 </div>
 <%@taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
-<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script
@@ -14,22 +14,29 @@
 
 
 <script src="<c:url value="${btstrpjs }/angular.min.js"/>"></script>
-
+<script>
+/*  function delete1(id)
+{
+	 alert("hi");
+	 window.location="http://localhost:8080/autobazaar/delete/"+id;
+	 
+	}  */
+</script>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <script>
-	var app = angular.module("page", []).controller("innersection",
-			function($scope) {
-				$scope.products = $
-				{
-					sessionScope.cart
-				}
-				;
-				// $scope.products = product;
+	/* 	var app = angular.module("page", []).controller("innersection",
+	 function($scope) {
+	 $scope.products = $
+	 {
+	 sessionScope.cart
+	 }
+	 ;
+	 // $scope.products = product;
 
-			});
+	 }); */
 </script>
 
 <div ng-app="page" class="container">
@@ -41,7 +48,7 @@
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
-				<sf:form modelAttribute="product" method="post">
+				<sf:form modelAttribute="cart" method="post">
 
 					<c:set var="s" value="0"></c:set>
 
@@ -55,20 +62,38 @@
 								<th>Price</th>
 								<th>Quantity</th>
 								<th>Amount</th>
+								<th>Delete Order</th>
 							</tr>
 						</thead>
 
 						<tbody>
 
 
-							<tr>
+							<c:forEach items="${sessionScope.cart.listitem}" var="product">
+								<tr>
+									<td>${product.p.pid}</td>
+									<td>${product.p.pname}</td>
+									<td>${product.p.pbrand}</td>
+									<td>${product.p.pdescription}</td>
+									<td>${product.quantity}</td>
+									<td>${product.p.pprice* product.quantity}</td>
+									
+									<td><a class="btn btn-info"
+								href="<c:url value='/delete/${product.p.pid}' />">Update</a></td>
+										 
+										<%-- <button class="btn btn-danger"
+										onclick="delete1(${product.p.pid})" >Delete</button></td>  --%>
+								</tr>
+							</c:forEach>
+
+							<%-- <tr>
 								<td>${product.pname}</td>
 								<td>${product.pbrand}</td>
 								<td>${product.pdescription}</td>
 								<td>${product.pprice}</td>
 								<td>1</td>
 								<td>${product.pprice*1}</td>
-							</tr>
+							</tr> --%>
 
 						</tbody>
 
@@ -77,7 +102,7 @@
 						<div class="col-md-4"></div>
 						<div class="col-md-4"></div>
 						<div class="col-md-4">
-							<sf:input type="hidden" path="pid"></sf:input>
+							<%-- <sf:input type="hidden" path="pid"></sf:input> --%>
 							<input class="btn btn-info" name="_eventId_submit" type="submit"
 								value="Next" />
 						</div>

@@ -1,5 +1,6 @@
 package com.autobazaar.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -9,16 +10,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import org.springframework.security.acls.model.SidRetrievalStrategy;
 
 @Entity
-public class ShoppingCart {
+@Table(name="ShoppingCart")
+public class ShoppingCart implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int cartId;
 	@OneToOne
 	private UserDetails user;
-	@OneToMany(mappedBy = "c", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
 	List<Item> listitem;
 
 	/**
