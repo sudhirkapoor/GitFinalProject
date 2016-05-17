@@ -22,8 +22,16 @@
 
 	<view-state id="start" view="Order" model="flowScope.cartlist">
 
+		<transition on="edit" to="delete" />
 		<transition on="submit" to="calladdress" />
 	</view-state>
+
+<action-state id="delete">
+ <evaluate expression="shoppingCartController.delete(cartlist.listitem.p.pid,messageContext)" result="flowScope.cartlist"></evaluate> 
+		 <transition on="success" to="start" /> 
+		<!-- transition on="failure" to="start" /> --> </action-state>
+		
+
 
  <action-state id="calladdress">
  <evaluate expression="shoppingCartController.getaddress()" result="flowScope.uaddress"></evaluate> 

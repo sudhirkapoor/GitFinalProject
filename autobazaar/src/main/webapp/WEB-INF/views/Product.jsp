@@ -48,24 +48,47 @@
 
 					<tbody>
 
-						<tr ng-repeat="p in products | filter:searchText">
+						<tr ng-repeat="p in products | filter:searchText" class="table-responsive">
+					
+						
 
-							<td>{{p.pid}}</td>
+						<%-- 	<td class="pu-image fk-product-thumb">
+							
+					
+						<form action="${session.getContextPath()}/autobazaar/ProductDetail"  method="post" >
+									<input type="hidden" value="{{p.pid}}" name="pid"></input> <input
+										type="hidden" value="{{p.pname}}" name="pname"></input> <input
+										type="hidden" value="{{p.pbrand}}" name="pbrand"></input> <input
+										type="hidden" value="{{p.pdescription}}" name="pdescription"></input>
+									<input type="hidden" value="{{p.pprice}}" name="pprice"></input>
+									<a href="">
+							<!-- <img style="width: 250px; height: 250px" border="5"
+					src="resources/images/{{p.pid}}.jpg" alt=""
+					class="image-responsive" /> -->
+								<button type="submit">
+										<img style="width: 250px; height: 250px" border="5"
+					src="resources/images/{{p.pid}}.jpg" alt=""
+					class="image-responsive" /></span>
+									</button>
+								</form>
+					</td>--%>
+					<td></td>
 							<td>{{p.pname}}</td>
 							<td>{{p.pbrand}}</td>
 							<td>{{p.pdescription}}</td>
 							<td>{{p.pprice}}</td>
 							<td>{{p.pcategory}}</td>
-							<td>
+							</a>
+						 	 <td>
 								<form action="${session.getContextPath()}/autobazaar/ProductDetail"  method="post" >
 									<input type="hidden" value="{{p.pid}}" name="pid"></input> <input
 										type="hidden" value="{{p.pname}}" name="pname"></input> <input
 										type="hidden" value="{{p.pbrand}}" name="pbrand"></input> <input
 										type="hidden" value="{{p.pdescription}}" name="pdescription"></input>
 									<input type="hidden" value="{{p.pprice}}" name="pprice"></input>
-									<button type="submit">
+									<button class="btn btn-info" type="submit">
 										<span class="glyphicon glyphicon-plus-sign"></span>
-									</button>
+									</button> 
 								</form>
 							</td>
 

@@ -81,10 +81,12 @@ Product details
 
 	<sf:form modelAttribute="product" method="post">
 		<div class="row">
-			<div class="col-md-6">
-				<img style="width: 550px; height: 550px" border="5"
+			<div class="col-md-6 table-bordered">
+				<img style="width: 500px; height: 500px" border="5"
 					src="resources/images/${product.pid}.jpg" alt=""
 					class="image-responsive" />
+					<br/>
+					<font color="Orange"><h3>${product.pdescription}</h3></font>
 			</div>
 			<div class="col-md-6">
 				<div class="row">
@@ -133,7 +135,7 @@ Product details
 						<div class="col-md-4">
 							<a href="${session.getContextPath()}/autobazaar/Order/${product.pid}" role="button"
 								name="_eventId_submit"
-								class="btn btn-lg btn-brand btn-full-width">Add to Cart
+								class="btn btn-lg btn-primary btn-full-width">Add to Cart  <span class="glyphicon glyphicon-cart-in"></span>
 								</a>
 														</div>
 					</div>

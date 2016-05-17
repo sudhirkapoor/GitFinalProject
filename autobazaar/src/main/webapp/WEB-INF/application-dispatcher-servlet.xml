@@ -50,8 +50,8 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd
 	<!--  web flow configuration -->
  <webflow:flow-executor id="flowExecutor" />
  <webflow:flow-registry id="flowRegistry"
-		flow-builder-services="flowBuilderServices" base-path="/WEB-INF">
- <webflow:flow-location id="memberShip" path="/OrderFlow.xml" />
+		flow-builder-services="flowBuilderServices">    <!-- base-path="/WEB-INF" -->
+ <webflow:flow-location id="memberShip" path="/WEB-INF/OrderFlow.xml" />
 	</webflow:flow-registry>
   
  
