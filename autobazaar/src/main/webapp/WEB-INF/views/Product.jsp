@@ -2,7 +2,12 @@
 <div>
 	<%@ include file="Header.jsp"%>
 </div>
-
+<style>
+ td{
+vertical-align: center;
+ align:center;
+}
+</style>
 <script>
 	var app = angular.module("search", []).controller("productTable",
 			function($scope) {
@@ -36,7 +41,7 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>ID</th>
+							<th></th>
 							<th>Name</th>
 							<th>Brand</th>
 							<th>Description</th>
@@ -72,22 +77,24 @@
 									</button>
 								</form>
 					</td>--%>
-					<td></td>
+					<td align="right"><img style="width: 150px; height: 150px" border="5"
+					src="resources/images/{{p.pid}}.jpg" alt=""
+					class="image-responsive" /></td>
 							<td>{{p.pname}}</td>
 							<td>{{p.pbrand}}</td>
 							<td>{{p.pdescription}}</td>
 							<td>{{p.pprice}}</td>
 							<td>{{p.pcategory}}</td>
-							</a>
-						 	 <td>
+							
+						 	 <td align="right">
 								<form action="${session.getContextPath()}/autobazaar/ProductDetail"  method="post" >
 									<input type="hidden" value="{{p.pid}}" name="pid"></input> <input
 										type="hidden" value="{{p.pname}}" name="pname"></input> <input
 										type="hidden" value="{{p.pbrand}}" name="pbrand"></input> <input
 										type="hidden" value="{{p.pdescription}}" name="pdescription"></input>
 									<input type="hidden" value="{{p.pprice}}" name="pprice"></input>
-									<button class="btn btn-info" type="submit">
-										<span class="glyphicon glyphicon-plus-sign"></span>
+									<button class="btn btn-info" type="submit">More Info
+										<!-- <span class="glyphicon glyphicon-eye-open"></span> -->
 									</button> 
 								</form>
 							</td>

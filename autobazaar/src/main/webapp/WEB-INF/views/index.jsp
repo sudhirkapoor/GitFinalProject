@@ -27,7 +27,7 @@
 		// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area (the speed of the animation)
 		$('html, body').animate({
 			scrollTop : $(hash).offset().top
-		}, 1100, function() {
+		}, 1000, function() {
 
 			// Add hash (#) to URL when done scrolling (default click behavior)
 			window.location.hash = hash;
@@ -152,7 +152,9 @@
 
 
 </div>
-<div id="section1" style="width: 100%; height: 270px; background:#E8E1E1">
+
+<!-- style="width: 100%; height: 270px; background:#E8E1E1" -->
+<div class="Jumbotron" id="section1" >
 		
 
 			<!-- <div class="panel panel-default">
@@ -160,7 +162,7 @@
 				<h4>About Us</h4>
 			</div>
 			<div class="panel-body"> -->
-			<h2>About Us</h2>
+			<h1>About Us</h1>
 			<p
 				style="font-size: 17px; font-family: Times New Roman, Georgia, Serif">AutoBazaar.com
 				is a one stop shop for all car needs. We intend to make vehicle
