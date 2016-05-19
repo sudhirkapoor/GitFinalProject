@@ -56,7 +56,7 @@ public class ShoppingCartController {
 			cart.setListitem(listcart);
 			session.setAttribute("cart", cart);
 		}
-
+System.out.println("redirect");
 		return "redirect:/memberShip"; // page name
 	}
 
@@ -76,8 +76,29 @@ public class ShoppingCartController {
 
 	/* @SuppressWarnings("unchecked") */
 	/* @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET) */
-	/*@RequestMapping(value = "/delete/{pid}")
-	public String delete(@PathVariable(value = "pid") int pid, HttpSession session) {
+	@RequestMapping(value = "/delete/{pid}")
+	public String delete(@PathVariable(value = "pid") int pid, HttpSession session,Model m) {
+		cart = (ShoppingCart) session.getAttribute("cart");
+
+		List<Item> listcart = (List<Item>) cart.getListitem();
+
+		int index = isExisting(pid, listcart);
+		listcart.remove(index);
+		cart.setListitem(listcart);
+
+		session.setAttribute("cart", cart);
+		System.out.println("delete");
+	
+		
+	return "redirect:http://localhost:8080/autobazaar/memberShip";
+		//this.enteflow();
+	}
+	
+	
+	
+	
+	/*
+	public String delete(int pid,MessageContext messageContext, HttpSession session) {
 		cart = (ShoppingCart) session.getAttribute("cart");
 
 		List<Item> listcart = (List<Item>) cart.getListitem();
@@ -92,30 +113,9 @@ public class ShoppingCartController {
 		return "success";
 	return "redirect:memberShip";
 		this.enteflow();
-	}*/
-	
-	
-	
-	
-	
-	public String delete(int pid,MessageContext messageContext, HttpSession session) {
-		cart = (ShoppingCart) session.getAttribute("cart");
-
-		List<Item> listcart = (List<Item>) cart.getListitem();
-
-		int index = isExisting(pid, listcart);
-		listcart.remove(index);
-		cart.setListitem(listcart);
-
-		session.setAttribute("cart", cart);
-		System.out.println("delete");
-	
-		return "success";
-	/*return "redirect:memberShip";*/
-		/*this.enteflow();*/
 	}
 	
-	
+	*/
 	
 
 	/*public ModelAndView enterflow() {

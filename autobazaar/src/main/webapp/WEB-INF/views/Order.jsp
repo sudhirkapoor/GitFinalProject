@@ -77,11 +77,11 @@
 									<td>${product.p.pdescription}</td>
 									<td>${product.quantity}</td>
 									<td>${product.p.pprice* product.quantity}</td>
-									<%-- 
+									
 									<td><a class="btn btn-danger"
-								href="<c:url value='/delete/${product.p.pid}' />">Delete  <span class="glyphicon glyphicon-remove-sign"></span></a></td>
-										  --%>
-										<td><button class="btn btn-danger" name="_eventId_edit">Delete</button></td> 
+								href="<c:url value='${session.getContextPath()}/delete/${product.p.pid}' />">Delete  <span class="glyphicon glyphicon-remove-sign"></span></a></td>
+										 
+										<!-- <td><button class="btn btn-danger" name="_eventId_edit">Delete</button></td> --> 
 									<%-- 	<sf:input type="hidden" path="product.p.pid"></sf:input> --%>
 								</tr>
 							</c:forEach>
