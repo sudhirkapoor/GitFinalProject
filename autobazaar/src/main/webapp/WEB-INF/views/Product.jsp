@@ -38,7 +38,7 @@ vertical-align: center;
 
 			<div class="col-md-8">
 
-				<table class="table table-striped">
+				<table class="table-responsive table-striped">
 					<thead>
 						<tr>
 							<th></th>

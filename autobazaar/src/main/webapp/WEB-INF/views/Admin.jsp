@@ -1,20 +1,18 @@
 <style>
-body {
+ body {
 	background: #eee !important;
-}
+} 
 
-.wrapper {
+/* .wrapper {
 	margin-top: 80px;
 	margin-bottom: 80px;
-}
+} */
 
-.form-signin {
-	max-width: 550px;
-	padding: 15px 35px 45px;
-	margin: 0 auto;
+/* .form-signin {
+
 	background: #f4f7f8;
 	
-}
+} */
 
 .form-signin-heading {
 	margin-bottom: 30px;
@@ -40,7 +38,7 @@ body {
 			<div class="col-md-4 col-sm-4 col-xs-4"></div>
 			<div class="col-md-4 col-sm-4 col-xs-4">
 
-				<form:form class="form-signin" action="${addAction} "
+				<form:form class="form-horizontal" role="form" action="${addAction} "
 					modelAttribute="product" commandName="product" method="post"
 					enctype="multipart/form-data">
 					<center><h2 class="form-signin-heading">Product Details</h2>
@@ -54,10 +52,10 @@ body {
 								disabled="true" />
 							<form:hidden path="pid" />	
 					</div>
-					</c:if>
+					</c:if> 
 
 					<div class="form-group">
-						<form:label path="pname">
+						<form:label  path="pname">
 							<spring:message text="Product Name" />
 						</form:label>
 						<form:input placeholder="Product Name" path="pname"
@@ -116,10 +114,11 @@ body {
 					</div>
 					<div>
 						<c:if test="${!empty product.pname}">
-							<input type="submit" class="btn btn-info" value="Update" />
+							<!-- <input type="submit" class="btn btn-info" value="Update" /> -->
+								<button type="submit" class="btn btn-info">Update  <span class="glyphicon glyphicon-edit"></span></button>
 						</c:if>
 						<c:if test="${empty product.pname}">
-							<input type="submit" class="btn btn-info" value="Add" />
+							<button type="submit" class="btn btn-info">Add  <span class="glyphicon glyphicon-check	"></span></button>
 						</c:if>
 					</div>
 				</center>
@@ -253,9 +252,9 @@ body {
 									<td>${product.pprice}</td>
 									<td>${product.pcategory}</td>
 									<td><a class="btn btn-info"
-										href="<c:url value='/Admin/updateProduct/${product.pid}' />">Update</a></td>
+										href="<c:url value='/Admin/updateProduct/${product.pid}' />">Update  <span class="glyphicon glyphicon-edit"></span></a></td>
 									<td><a class="btn btn-danger"
-										href="<c:url value='/Admin/deleteProduct/${product.pid}' />">Delete</a></td>
+										href="<c:url value='/Admin/deleteProduct/${product.pid}' />">Delete  <span class="glyphicon glyphicon-remove-sign"></span></a></td>
 								</tr>
 							</c:forEach>
 						</table>

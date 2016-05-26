@@ -59,7 +59,7 @@
 								<th>Name</th>
 								<th>Brand</th>
 								<th>Description</th>
-								<th>Price</th>
+								
 								<th>Quantity</th>
 								<th>Amount</th>
 								<th>Delete Order</th>
@@ -70,8 +70,9 @@
 
 
 							<c:forEach items="${sessionScope.cart.listitem}" var="product">
+							<c:set var="sum" value="${sum+ product.p.pprice* product.quantity}"></c:set>
 								<tr>
-									<td>${product.p.pid}</td>
+									
 									<td>${product.p.pname}</td>
 									<td>${product.p.pbrand}</td>
 									<td>${product.p.pdescription}</td>
@@ -85,6 +86,18 @@
 									<%-- 	<sf:input type="hidden" path="product.p.pid"></sf:input> --%>
 								</tr>
 							</c:forEach>
+							
+							<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+							Total Amount:
+							</td>
+							<td> ${sum}</td>
+							
+							</tr>
 
 							<%-- <tr>
 								<td>${product.pname}</td>

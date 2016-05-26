@@ -23,7 +23,6 @@ import com.autobazaar.model.ShoppingCart;
 import com.autobazaar.service.ProductService;
 
 @Controller
-// @RequestMapping(value = "/Shoppingcart")
 @Component
 public class ShoppingCartController {
 
@@ -31,7 +30,7 @@ public class ShoppingCartController {
 	private ProductService service;
 	ShoppingCart cart;
 
-	// @SuppressWarnings("unchecked")
+
 	@RequestMapping("/Order/{pid}")
 	public String ordernow(@PathVariable(value = "pid") int pid, ModelMap mm, HttpSession session) {
 
@@ -74,8 +73,7 @@ System.out.println("redirect");
 
 	}
 
-	/* @SuppressWarnings("unchecked") */
-	/* @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET) */
+	
 	@RequestMapping(value = "/delete/{pid}")
 	public String delete(@PathVariable(value = "pid") int pid, HttpSession session,Model m) {
 		cart = (ShoppingCart) session.getAttribute("cart");
@@ -91,39 +89,11 @@ System.out.println("redirect");
 	
 		
 	return "redirect:http://localhost:8080/autobazaar/memberShip";
-		//this.enteflow();
+	
 	}
 	
 	
 	
-	
-	/*
-	public String delete(int pid,MessageContext messageContext, HttpSession session) {
-		cart = (ShoppingCart) session.getAttribute("cart");
-
-		List<Item> listcart = (List<Item>) cart.getListitem();
-
-		int index = isExisting(pid, listcart);
-		listcart.remove(index);
-		cart.setListitem(listcart);
-
-		session.setAttribute("cart", cart);
-		System.out.println("delete");
-	
-		return "success";
-	return "redirect:memberShip";
-		this.enteflow();
-	}
-	
-	*/
-	
-
-	/*public ModelAndView enterflow() {
-		System.out.println("redirecting to flow");
-		ModelAndView mv=new ModelAndView("Produc");
-		return mv;
-	}*/
-
 	@SuppressWarnings("unchecked")
 	private int isExisting(int id, List<Item> pcart) {
 

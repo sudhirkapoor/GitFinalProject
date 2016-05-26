@@ -42,6 +42,7 @@ Hello ${uaddress.cname}
 
 
 							<c:forEach items="${sessionScope.cart.listitem}" var="product">
+								<c:set var="sum" value="${sum+ product.p.pprice* product.quantity}"></c:set>
 								<tr>
 									
 									<td>${product.p.pname}</td>
@@ -53,6 +54,16 @@ Hello ${uaddress.cname}
 									
 								</tr>
 							</c:forEach>
+							<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+							Total Amount:
+							</td>
+							<td> ${sum}</td>
+							
+							</tr>
 <!-- <tr><td></td></tr> -->
 							<%-- <tr>
 								<td>${product.pname}</td>

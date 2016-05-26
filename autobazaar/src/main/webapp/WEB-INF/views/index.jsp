@@ -53,36 +53,36 @@
 
 						<div class="item active">
 							<img class="img-rounded"
-								style="height: 700px; background-size: cover;"
+								style="height: 850px; background-size: cover;"
 								src="<c:url value="${imgs }/Banner/b1.jpg"/>" />
 						</div>
 						<div class="item">
 							<img class="img-rounded"
-								style="height: 700px; background-size: cover;"
-								src="<c:url value="${imgs }/Banner/banner2.jpg"/>" />
+								style="height: 850px; background-size: cover;width:100%"
+								src="<c:url value="${imgs }/Banner/banner12.jpg"/>" />
 						</div>
 						<div class="item">
 							<img class="img-rounded"
-								style="height: 700px; background-size: cover;"
-								src="<c:url value="${imgs }/Banner/banner3.jpg"/>" />
-						</div>
-
-						<div class="item">
-							<img class="img-rounded"
-								style="height: 700px; background-size: cover;"
-								src="<c:url value="${imgs }/Banner/banner4.jpg"/>" />
+								style="height: 850px; background-size: cover;width:100%"
+								src="<c:url value="${imgs }/Banner/banner7.jpg"/>" />
 						</div>
 
 						<div class="item">
 							<img class="img-rounded"
-								style="height: 700px; background-size: cover;"
-								src="<c:url value="${imgs }/Banner/banner5.jpg"/>" />
+								style="height: 850px; background-size: cover;"
+								src="<c:url value="${imgs }/Banner/banner8.jpg"/>" />
 						</div>
 
 						<div class="item">
 							<img class="img-rounded"
-								style="height: 700px; background-size: cover;"
-								src="<c:url value="${imgs }/Banner/banner6.jpg"/>" />
+								style="height: 850px; background-size: cover;"
+								src="<c:url value="${imgs }/Banner/banner14.jpg"/>" />
+						</div>
+
+						<div class="item">
+							<img class="img-rounded"
+								style="height: 850px; background-size: cover;width:100%"
+								src="<c:url value="${imgs }/Banner/banner10.jpg"/>" />
 						</div>
 					</div>
 				</center>
