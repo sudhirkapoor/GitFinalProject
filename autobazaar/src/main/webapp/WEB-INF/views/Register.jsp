@@ -158,14 +158,14 @@ label.light {
 									<td><form:errors path="password" style="color:red;" /></td>
 								</tr>
 
-								<tr>
+								<%-- <tr>
 									<td><form:label path="address">Address:</form:label></td>
 									<td><form:input class="form-control col-xs-4"
 											style="width:150px;" type="text" id="address" path="address"
 											name="address"></form:input></td>
 									<td>
 									<td><form:errors style="color:red;" path="address" /></td>
-								</tr>
+								</tr> --%>
 
 								<tr>
 									<td><form:label path="zipcode">Zipcode:</form:label></td>
@@ -176,7 +176,7 @@ label.light {
 									<td><form:errors path="zipcode" /></td>
 									</td>
 								</tr>
-
+<%-- 
 								<tr>
 									<td><form:label path="phone">Phone:</form:label></td>
 									<td><form:input class="form-control col-xs-4"
@@ -186,7 +186,7 @@ label.light {
 									<td>
 									<td><form:errors  path="phone" /></td>
 								</tr>
-
+ --%>
 
 							</table>
 						</div>
